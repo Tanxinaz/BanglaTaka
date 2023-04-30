@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "./storage.js";
 import "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract BanglaTaka {
@@ -12,18 +13,26 @@ contract BanglaTaka {
 
     uint256 public price;
     AggregatorV3Interface internal priceFeed;
+    Storage storageContract;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     constructor(string memory _name, string memory _symbol, uint8 _decimals, uint256 _initialSupply, address _priceFeed) {
+        string memory _name,
+        string memory _symbol,
+        uint8 _decimals,
+        uint256 _initialSupply,
+        address _priceFeed,
+        address _storageAddress
+    } {
         name = _name;
         symbol = _symbol;
         decimals = _decimals;
         totalSupply = _initialSupply * 10**uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
         emit Transfer(address(0), msg.sender, totalSupply);
-        price = 1000;
         priceFeed = AggregatorV3Interface(_priceFeed);
+        storageContract = Storage(_storageAddress);
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
