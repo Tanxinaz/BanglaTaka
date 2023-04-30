@@ -13,7 +13,7 @@ Some Ethereum cryptocurrency to use for transactions
 Knowledge of Solidity and smart contract development
 
 ### Installation
-To use the BanglaTaka contract, simply deploy the BanglaTaka.sol contract to your Ethereum network of choice using your preferred method, such as Remix or Truffle. You will also need to deploy the Storage.sol contract and two scripts ChainlinkGoldPriceFeed.sol to interact with the Chainlink Price Feed contract (scripts are not completed yet due to regulatory and use case changes).
+To use the BanglaTaka contract, simply deploy the BanglaTaka.sol contract to your Ethereum network of choice using your preferred method, such as Remix or Truffle. You will also need to deploy the storage.sol contract and two scripts ChainlinkGoldPriceFeed.sol to interact with the Chainlink Price Feed contract (scripts are not completed yet due to regulatory and use case changes).
 
 ### Usage:
 
