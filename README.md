@@ -22,6 +22,7 @@ Once the BanglaTaka contract is deployed, you can interact with it using any Eth
 You will also need to periodically update the price of the token using the updatePrice() function. This function fetches the latest price from the Chainlink Price Feed contract and updates the price in the BanglaTaka contract accordingly.
 
 
-License
+### License
 This project is licensed under the MIT License.
+
 
