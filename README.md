@@ -8,9 +8,9 @@ BanglaTaka is a simple ERC-20 token smart contract built on the Ethereum blockch
 
 In order to use the BanglaTaka contract, you will need the following:
 
-An Ethereum wallet such as MetaMask
-Some Ethereum cryptocurrency to use for transactions
-Knowledge of Solidity and smart contract development
+An Ethereum wallet such as MetaMask,
+some Ethereum cryptocurrency to use for transactions and
+knowledge of Solidity and smart contract development
 
 ### Installation
 To use the BanglaTaka contract, simply deploy the BanglaTaka.sol contract to your Ethereum network of choice using your preferred method, such as Remix or Truffle. You will also need to deploy the storage.sol contract and two scripts ChainlinkGoldPriceFeed.sol and storage.js to interact with the Chainlink Price Feed contract (scripts are not completed yet due to regulatory and use case changes).
