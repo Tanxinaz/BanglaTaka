@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "./storage.sol"; 
+import "./script/storage.js";
 
 contract BanglaTakaMicroloan {
     BanglaTakaStorage public banglaTakaStorage; 
