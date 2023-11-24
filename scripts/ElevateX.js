@@ -1,9 +1,9 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const BanglaTaka = await ethers.getContractFactory("BanglaTaka");
-  const bt = await BanglaTaka.deploy(
-    "Bangla Taka",
+  const ElevateX = await ethers.getContractFactory("ElevateX");
+  const bt = await ElevateX.deploy(
+    "ElevateX",
     "BDT",
     18,
     //Add the ether fee after regulatory approval and deployment
@@ -11,7 +11,7 @@ async function main() {
     "TBA"
   );
   await bt.deployed();
-  console.log("BanglaTaka deployed to:", bt.address);
+  console.log("ElevateX deployed to:", bt.address);
 }
 
 main()
