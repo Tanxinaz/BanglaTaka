@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 import "./storage.sol"; 
 import "./scripts/storage.js";
 
-contract BanglaTakaMicroloan {
-    BanglaTakaStorage public banglaTakaStorage; 
+contract ElevateXMicroloan {
+    ElevateXStorage public banglaTakaStorage; 
 
     struct Loan {
         address borrower;
@@ -18,7 +18,7 @@ contract BanglaTakaMicroloan {
     uint256 public nextLoanId;
 
     constructor(address _storageAddress) {
-        banglaTakaStorage = BanglaTakaStorage(_storageAddress);
+        ElevateXStorage = BanglaTakaStorage(_storageAddress);
         nextLoanId = 1;
     }
 
@@ -29,10 +29,10 @@ contract BanglaTakaMicroloan {
         require(_dueDate > block.timestamp, "Due date must be in the future");
 
         // Ensure the borrower has sufficient collateral in BanglaTaka tokens
-        require(banglaTakaStorage.balanceOf(msg.sender) >= _amount, "Insufficient collateral");
+        require(ElevateXStorage.balanceOf(msg.sender) >= _amount, "Insufficient collateral");
 
         // Transfer the loan amount to the borrower
-        banglaTakaStorage.transfer(msg.sender, address(this), _amount);
+        ElevateXStorage.transfer(msg.sender, address(this), _amount);
 
         // Create a new loan
         Loan memory newLoan = Loan({
@@ -62,10 +62,10 @@ contract BanglaTakaMicroloan {
         uint256 repaymentAmount = calculateRepaymentAmount(loan.amount, loan.interestRate);
 
         // Transfer the repayment amount from the borrower to the contract
-        banglaTakaStorage.transfer(msg.sender, address(this), repaymentAmount);
+        ElevateXStorage.transfer(msg.sender, address(this), repaymentAmount);
 
         // Transfer the collateral back to the borrower
-        banglaTakaStorage.transfer(address(this), msg.sender, loan.amount);
+        ElevateXStorage.transfer(address(this), msg.sender, loan.amount);
 
         loan.repaid = true;
 
