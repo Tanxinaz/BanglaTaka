@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "./storage.sol";
 import "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
-contract BanglaTaka {
+contract ElevateX {
     string public name;
     string public symbol;
     uint8 public decimals;
